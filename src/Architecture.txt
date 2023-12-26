@@ -1,0 +1,29 @@
+Header {store | contact | account | cart}
+
+PAGE (store)
+
+under header {categories (sneakers, shoes, boots)}
+main {Hero (Gallery - Bestsellers) Background (image under block) | Mini-Categories (Sneakers, Shoes, Boots) - clickable}
+
+footer {contact | about | socials}
+
+PAGE (store => sneakers)
+
+under header {categories (sneakers, shoes, boots)}
+main {sneakers (array)}
+
+footer {contact | about | socials}
+
+PAGE (store => shoes)
+
+under header {categories (sneakers, shoes, boots)}
+main {shoes (array)}
+
+footer {contact | about | socials}
+
+PAGE (store => boots)
+
+under header {categories (sneakers, shoes, boots)}
+main {boots (array)}
+
+footer {contact | about | socials}
