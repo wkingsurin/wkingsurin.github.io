@@ -1,0 +1,24 @@
+.catalog {
+    background-color: var(--main-g);
+}
+
+.container {
+}
+
+.catalog-box {
+    display: flex;
+    align-items: center;
+
+    height: 40px;
+
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+.catalog-box > *:not(:last-child) {
+    margin-right: 20px;
+}
+.catalog-box__button {
+    font-family: inherit;
+    font-size: 14px;
+    color: inherit;
+}

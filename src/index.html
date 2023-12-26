@@ -3,9 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shoes.store</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Shoes.Store</title>
 </head>
 <body>
-    
+    <div class="wrapper">
+        <header class="header">
+            <div class="container">
+                <div class="header-box">
+                    <div class="header-box__logo-box logo-box">
+                        <h1 class="logo-box__logo">Shoes.Store</h1>
+                    </div>
+                    <div class="header-box__header-content header-content">
+                        <nav class="header-content__navigation navigation">
+                                <button class="navigation-button">Store</button>
+                                <button class="navigation-button">Contact</button>
+                        </nav>
+                        <div class="header-content__user user">
+                            <button class="user-account account">
+                                <img src="/src/img/icons/account.png" alt="Account" class="user-account__image image">
+                            </button>
+                            <button class="user-cart cart">
+                                <img src="/src/img/icons/cart.png" alt="Cart" class="user-cart__image image">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="main">
+            <section class="catalog">
+                <div class="container">
+                    <div class="catalog-box">
+                        <button class="catalog-box__button">Sneakers</button>
+                        <button class="catalog-box__button">Shoes</button>
+                        <button class="catalog-box__button">Boots</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-box"></div>
+            </div>
+        </footer>
+    </div>
+
+    <script type="module" src="js/app.js"></script>
 </body>
 </html>
