@@ -149,15 +149,15 @@ a {
 }
 
 .header-content__user > *:not(:last-child) {
-  margin-right: 25px;
+  margin-right: 15px;
 }
 
 .user-account, .user-cart {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 25px;
-  height: 25px;
+  width: 22px;
+  height: 22px;
 }
 
 .catalog {
@@ -460,11 +460,11 @@ a {
   display: block;
 }
 
-.offering {
+.discount {
   background-color: var(--main-g75);
   overflow: hidden;
 }
-.offering .container {
+.discount .container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -473,11 +473,11 @@ a {
       -ms-flex-direction: column;
           flex-direction: column;
 }
-.offering .offering__inner-wrapper {
+.discount .discount__inner-wrapper {
   position: relative;
 }
 
-.offering__image-block {
+.discount__image-block {
   position: absolute;
   top: 0;
   left: -20px;
@@ -492,7 +492,7 @@ a {
       -ms-flex-pack: center;
           justify-content: center;
 }
-.offering__image-block .image__inner-wrapper {
+.discount__image-block .image__inner-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -502,11 +502,11 @@ a {
   width: 731px;
   height: 482px;
 }
-.offering__image-block .image {
+.discount__image-block .image {
   opacity: 40%;
 }
 
-.offering-box {
+.discount-box {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -521,11 +521,11 @@ a {
           box-sizing: border-box;
 }
 
-.offering-box > *:not(:last-child) {
+.discount-box > *:not(:last-child) {
   margin-right: 100px;
 }
 
-.offering-box__description {
+.discount-box__description {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -545,7 +545,7 @@ a {
   font-size: 28px;
 }
 
-.offering-box__form {
+.discount-box__form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -667,6 +667,8 @@ a {
   background-color: var(--main-g2);
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
 }
 
 .main {
@@ -679,4 +681,94 @@ a {
   -webkit-box-flex: 0;
       -ms-flex: 0 1;
           flex: 0 1;
+  background-color: var(--main-g2);
+}
+
+.footer-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 30px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.footer-box .footer-box__socials {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 15px 1fr 15px 1fr 15px 1fr;
+  grid-template-columns: repeat(4, 1fr);
+  -ms-grid-rows: 1fr;
+  grid-template-rows: repeat(1, 1fr);
+  grid-gap: 15px;
+}
+.footer-box .footer-box__socials > *:nth-child(1) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+}
+.footer-box .footer-box__socials > *:nth-child(2) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+}
+.footer-box .footer-box__socials > *:nth-child(3) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 5;
+}
+.footer-box .footer-box__socials > *:nth-child(4) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 7;
+}
+.footer-box .social__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+.footer-box .item__image-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 22px;
+  height: 22px;
+}
+.footer-box .footer-box__contact-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.footer-box .footer-box__contact-block > *:not(:last-child) {
+  margin-right: 70px;
+}
+.footer-box .footer-box__navigation .navigation-button {
+  color: white;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+.footer-box .footer-box__navigation .navigation-button:hover {
+  color: var(--main-c);
+}
+.footer-box .footer-box__navigation > *:not(:last-child) {
+  margin-right: 30px;
+}
+.footer-box .footer__call-now {
+  color: inherit;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+.footer-box .footer__call-now:hover {
+  color: var(--main-c);
 }
