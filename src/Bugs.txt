@@ -1,0 +1,1 @@
+1. Fix max-width and max-height when few items in card

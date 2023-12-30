@@ -58,7 +58,7 @@
 .gallery {
 }
 .item-wrapper {
-    flex: 1 1 20%;
+    flex: 0 0 20%;
 
     display: flex;
 
@@ -131,6 +131,5 @@
     border-radius: 11px;
 }
 .item__image {
-    overflow-clip-margin: unset;
     border-radius: 11px;
 }
