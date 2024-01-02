@@ -3,6 +3,9 @@
 @import 'categories';
 @import 'offering';
 
+// import product page styles
+@import 'product/product';
+
 .main {
     flex: 1 1;
 }

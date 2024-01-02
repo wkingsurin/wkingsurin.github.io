@@ -110,11 +110,16 @@
 .item__price-block {
     display: flex;
 
+    margin-bottom: 10px;
+
     font-weight: 400;
     color: inherit;
 
     .price {
-        margin-bottom: 10px;
+        font-size: 18px;
+        margin-right: 1px;
+    }
+    .currency {
     }
 }
 .price, .currency {

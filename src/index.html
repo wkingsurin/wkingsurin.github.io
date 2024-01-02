@@ -40,6 +40,9 @@
                         <button class="catalog-box__button">Shoes</button>
                         <button class="catalog-box__button">Boots</button>
                     </div>
+                    <div class="catalog-box">
+                        <input type="text" class="catalog-box__search" name="search" placeholder="Search...">
+                    </div>
                 </div>
             </section>
             <section class="hero">
@@ -341,7 +344,7 @@
                                             </div>
                                         </label>
                                         <span class="splitter"></span>
-                                        <input type="text" class="input-block__input" id="name" placeholder="Name">
+                                        <input type="text" class="input-block__input" id="name" placeholder="Name" required>
                                     </div>
                                     <div class="form-content__input-block input-block">
                                         <label for="phone" class="input-block__label">
@@ -350,7 +353,7 @@
                                             </div>
                                         </label>
                                         <span class="splitter"></span>
-                                        <input type="phone" class="input-block__input" id="phone" placeholder="+7-953-645-00-00">
+                                        <input type="phone" class="input-block__input" id="phone" placeholder="+7-953-645-00-00" required>
                                     </div>
                                     <div class="form-content__input-block input-block">
                                         <label for="email" class="input-block__label">
@@ -359,10 +362,10 @@
                                             </div>
                                         </label>
                                         <span class="splitter"></span>
-                                        <input type="email" class="input-block__input" id="email" placeholder="email@example.com">
+                                        <input type="email" class="input-block__input" id="email" placeholder="email@example.com" required>
                                     </div>
                                     <textarea name="message" class="form-content__message" placeholder="Write a comment..."></textarea>
-                                    <button class="form-content__submit" disabled name="submit">Send</button>
+                                    <button class="form-content__submit" name="submit">Send</button>
                                 </div>
                             </form>
                         </div>
@@ -375,26 +378,26 @@
             <div class="container">
                 <div class="footer-box">
                     <div class="footer-box__socials social">
-                        <div class="social__item">
+                        <a href="#" class="social__item">
                             <div class="item__image-block">
                                 <img src="img/icons/github-white.png" alt="" class="image">
                             </div>
-                        </div>
-                        <div class="social__item">
+                        </a>
+                        <a href="#" class="social__item">
                             <div class="item__image-block">
                                 <img src="img/icons/linkedin-white.png" alt="" class="image">
                             </div>
-                        </div>
-                        <div class="social__item">
+                        </a>
+                        <a href="#" class="social__item">
                             <div class="item__image-block">
                                 <img src="img/icons/x-white.png" alt="" class="image">
                             </div>
-                        </div>
-                        <div class="social__item">
+                        </a>
+                        <a href="#" class="social__item">
                             <div class="item__image-block">
                                 <img src="img/icons/gmail-white.png" alt="" class="image">
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <div class="footer-box__contact-block">
                         <nav class="footer-box__navigation navigation">

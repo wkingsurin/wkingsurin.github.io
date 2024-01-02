@@ -1,5 +1,11 @@
 .catalog {
-    background-color: var(--main-g);
+    background-color: var(--main-g2);
+    box-shadow: 0 3px 7px 2px rgba(0, 0, 0, .11);
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+    }
 }
 
 .container {
@@ -9,7 +15,8 @@
     display: flex;
     align-items: center;
 
-    height: 40px;
+    height: 50px;
+    padding: 10px 0;
 
     box-sizing: border-box;
 }
@@ -20,4 +27,28 @@
     font-family: inherit;
     font-size: 14px;
     color: inherit;
+}
+.catalog-box__search {
+    width: 250px;
+    height: 100%;
+    max-width: 250px;
+
+    font-size: 16px;
+    
+    padding: 7px 12px;
+
+    border-radius: 12px;
+    box-sizing: border-box;
+    background-color: var(--main-b);
+
+    outline: none;
+    border: none;
+    transition: .2s ease-in-out;
+}
+.catalog-box__search:focus {
+    background-color: rgb(225, 223, 247);
+    box-shadow: inset 0 0 7px 2px rgba(0, 0, 0, .05);
+}
+.catalog-box__search::placeholder {
+    color: var(--main-g);
 }
