@@ -3,22 +3,13 @@
     }
 
     .product-box {
-        padding: 50px 0 90px 0;
     }
     .product-box__row-box {
-    }
-    .product-box__row-box:not(:last-child) {
-        margin-bottom: 40px;
+        padding: 50px 0 40px 0;
     }
     .row-box {
     }
     .row-box__title {
-        font-size: 18px;
-        font-weight: 400;
-        
-        margin-bottom: 20px;
-        
-        color: var(--main-g);
     }
     .row-box__item {
         display: flex;
@@ -270,4 +261,12 @@
     }
 }
 .container {
+}
+.row-box__title {
+    font-size: 18px;
+    font-weight: 400;
+    
+    margin-bottom: 20px;
+    
+    color: var(--main-g);
 }
