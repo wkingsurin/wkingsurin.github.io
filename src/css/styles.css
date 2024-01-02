@@ -770,9 +770,10 @@ a {
   border-radius: 11px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  border: 2px solid transparent;
 }
 .product .gallery__images-block .active {
-  border: 1px solid var(--main-g);
+  border: 2px solid var(--main-g);
 }
 .product .gallery__images-block .image-block:not(:last-child) {
   margin-bottom: 10px;
@@ -780,7 +781,7 @@ a {
 .product .image {
   border-radius: 11px;
 }
-.product .galley__main-image {
+.product .gallery__main-image {
   width: 413px;
   height: 310px;
   border-radius: 11px;

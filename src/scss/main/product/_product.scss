@@ -44,9 +44,11 @@
 
             border-radius: 11px;
             box-sizing: border-box;
+
+            border: 2px solid transparent;
         }
         .active {
-            border: 1px solid var(--main-g);
+            border: 2px solid var(--main-g);
         }
         .image-block:not(:last-child) {
             margin-bottom: 10px;
@@ -57,7 +59,7 @@
     .image {
         border-radius: 11px;
     }
-    .galley__main-image {
+    .gallery__main-image {
         width: 413px;
         height: 310px;
 
