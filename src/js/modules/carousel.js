@@ -1,16 +1,39 @@
-// import condition from "./condition.js"
-
 export default function carousel(options) {
-    let element = options.element
+    let left = 0
+    let coords = options.carousel.getBoundingClientRect()
+    let maxLeft = -coords.width
+    let slideWidth = options.item.getBoundingClientRect().width
+    let buttons = Array.from(options.buttons)
 
-    element.addEventListener('touchstart', event => {
-        // let target = event.target
-        console.log('event start')
+    buttons.forEach(button => button.style.opacity = 0)
+
+    options.element.addEventListener('mouseover', event => {
+        buttons.forEach(button => button.style.opacity = 1)
+    })
+    options.element.addEventListener('mouseout', event => {
+        buttons.forEach(button => button.style.opacity = 0)
     })
 
-    element.addEventListener('touchmove', event => {
-        // let target = event.target
+    options.element.addEventListener('click', event => {
+        let target = event.target
+        
+        if (!(target.closest('BUTTON'))) return
+        target = target.closest('BUTTON')
+        
+        if (target.id == options.id) {
+            left -= slideWidth
 
-        console.log('touchmove')
+            if (left < maxLeft) {
+                left = maxLeft
+            }
+            options.carousel.style.left = left + 'px'
+        }   else {
+            left += slideWidth
+
+            if (left > 0) {
+                left = 0
+            }
+            options.carousel.style.left = left + 'px'
+        }
     })
 }

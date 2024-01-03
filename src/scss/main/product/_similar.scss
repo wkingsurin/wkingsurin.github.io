@@ -22,9 +22,14 @@
         box-sizing: border-box;
         background-color: var(--main-g05);
     }
+    .row-items__wrapper {
+        overflow: hidden;
+    }
     .row-items {
         position: relative;
+        left: 0;
         flex-wrap: nowrap;
+        transition: .5s cubic-bezier(0, -0.15, 1, 1.15);
     }
     .item-wrapper {
     }
@@ -49,7 +54,8 @@
 
     button {
         position: absolute;
-        top: 0;
+        top: -40px;
+        opacity: 0;
 
         display: flex;
         align-items: center;
@@ -62,7 +68,7 @@
         background-color: white;
         box-shadow: 0 0 7px 2px rgba(0, 0, 0, .05);
 
-        transition: background-color .3s ease-in-out;
+        transition: .4s ease-in-out;
 
         &:hover {
             background-color: var(--main-g);

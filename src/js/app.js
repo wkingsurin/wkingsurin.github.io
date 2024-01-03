@@ -31,7 +31,11 @@ function init() {
             })
 
             carousel({
-                element: document.querySelector('.row-items')
+                element: document.querySelector('.row-box__carousel'),
+                carousel: document.querySelector('.row-items'),
+                item: document.querySelector('.item-wrapper'),
+                buttons: document.querySelectorAll('button[data-type="anim"]'),
+                id: 'Next'
             })
         }   catch (err) {
             console.log(err.message)
