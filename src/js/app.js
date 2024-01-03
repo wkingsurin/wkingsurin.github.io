@@ -6,6 +6,9 @@ import setBorder from './modules/setBorder.js'
 
 import carousel from './modules/carousel.js'
 
+import createNotification from './modules/notification.js'
+import createTip from './modules/tip.js'
+
 function init() {
     function cssCorrection() {
         try {
@@ -43,6 +46,68 @@ function init() {
         }
     }
     cssCorrection()
+
+    function setTip() {
+        try {
+            let tip
+            let notification
+            let cart = document.querySelector('.cart')
+            let submit = document.querySelector('.submit')
+
+            submit.addEventListener('click', event => {
+                event.preventDefault()
+
+                if (tip) return
+
+                tip = createTip({
+                    classList: ['tip'],
+                    textContent: 'Added',
+                    cursorX: event.clientX,
+                    cursorY: event.clientY
+                })
+
+                document.body.append(tip)
+                setNotification()
+                setTimeout(() => tip.style.opacity = 0, 200)
+                setTimeout(() => {tip.remove(); tip = null}, 550)
+            })
+
+            function setNotification() {
+                if (notification != undefined) return
+
+                notification = createNotification({
+                    classList: ['notification'],
+                    textContent: 1
+                })
+
+                cart.append(notification)
+            }
+        }   catch (err) {
+            console.log(err.message)
+            return null
+        }
+    }
+    setTip()
+
+    // document.addEventListener('mouseout', event => {
+    //     let tip
+
+    //     if (!document.querySelector('.tip')) return
+
+    //     tip = document.querySelector('.tip')
+    //     setTimeout(() => tip.style.opacity = 0, 800)
+    //     setTimeout(() => tip.remove(), 1300)
+    // })
+
+    // document.addEventListener('mousemove', event => {
+    //     let tip
+
+    //     if (!document.querySelector('.tip')) return
+
+    //     tip = document.querySelector('.tip')
+    //     tip.style.left = event.clientX + 10 + 'px'
+    //     tip.style.top = event.clientY + 20 + 'px'      
+    // })
 }
 
 init()
