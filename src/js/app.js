@@ -4,6 +4,8 @@ import setTop from './modules/setTop.js'
 
 import setBorder from './modules/setBorder.js'
 
+import carousel from './modules/carousel.js'
+
 function init() {
     function cssCorrection() {
         try {
@@ -13,18 +15,23 @@ function init() {
                 alt: 'Account',
             })
             changeCarouselIcon({
-                element: document.querySelector('.carousel-buttons'),
+                element: document.querySelector('.row-box__carousel'),
                 type: 'anim',
                 id: 'Next'
             })
         
-            setTop(document.querySelector('.carousel-buttons'), {
+            setTop({
+                elements: document.querySelectorAll('.row-box__carousel button'),
                 carousel: document.querySelector('.row-box__carousel')
             })
             
             setBorder({
                 parent: document.querySelector('.gallery__images-block'),
                 image: document.querySelector('.gallery__main-image img')
+            })
+
+            carousel({
+                element: document.querySelector('.row-items')
             })
         }   catch (err) {
             console.log(err.message)

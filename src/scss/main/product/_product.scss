@@ -223,6 +223,10 @@
         border: 2px solid var(--main-g50);
         margin: -2px;
     }
+    .item-select:focus {
+        border: 2px solid var(--main-g75);
+        margin: -2px;
+    }
     .item-add__submit {
         display: flex;
         align-items: center;

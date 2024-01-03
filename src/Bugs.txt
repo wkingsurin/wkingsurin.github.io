@@ -1,1 +1,1 @@
-1. Fix max-width and max-height when few items in card
+1. Блок кнопок перекрывает item'ы на карусели

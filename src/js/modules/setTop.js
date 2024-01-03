@@ -1,4 +1,4 @@
-export default function setTop(element, options) {
+export default function setTop(options) {
     let elementHalfHeight = 0
     let carouselHalfHeight = 0
     let halfHeight = 0
@@ -6,9 +6,11 @@ export default function setTop(element, options) {
     if (options.carousel) {
         carouselHalfHeight = options.carousel.clientHeight / 2
     }
-    elementHalfHeight = element.clientHeight / 2
+    elementHalfHeight = options.elements[0].clientHeight / 2
 
     halfHeight = carouselHalfHeight - elementHalfHeight
 
-    element.style.top = halfHeight + 'px'
+    options.elements.forEach(element => {
+        element.style.top = halfHeight + 'px'
+    })
 }
