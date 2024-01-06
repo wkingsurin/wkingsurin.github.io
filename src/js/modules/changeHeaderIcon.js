@@ -1,6 +1,8 @@
 import condition from "./condition.js"
 
 export default function changeIcon(options) {
+    if (!options.element) return
+
     options.element.addEventListener('mousemove', event => {
         let target = event.target
 

@@ -1,4 +1,6 @@
 export default function setBorder(options) {
+    if (!options.parent) return
+    
     let imageBlocks = Array.from(options.parent.children)
 
     options.parent.addEventListener('mouseover', event => {

@@ -1,6 +1,8 @@
 import condition from "./condition.js"
 
 export default function changeCarouselIcon(options) {
+    if (!options.element) return
+
     options.element.addEventListener('mousemove', event => {
         let target = event.target
         let type = target.dataset.type

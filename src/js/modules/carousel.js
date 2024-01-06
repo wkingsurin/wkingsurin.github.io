@@ -1,4 +1,6 @@
 export default function carousel(options) {
+    if (!options.element) return
+
     let left = 0
     let coords = options.carousel.getBoundingClientRect()
     let maxLeft = -coords.width

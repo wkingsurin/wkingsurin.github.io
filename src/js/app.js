@@ -87,7 +87,8 @@ function init() {
             return null
         }
     }
-    setTip()
+    // => here bug
+    // setTip()
 
     // document.addEventListener('mouseout', event => {
     //     let tip

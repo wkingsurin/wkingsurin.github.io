@@ -1,4 +1,6 @@
 export default function setTop(options) {
+    if (!options.carousel) return
+
     window.addEventListener('DOMContentLoaded', () => {
         let elementHalfHeight = 0
         let carouselHalfHeight = 0
