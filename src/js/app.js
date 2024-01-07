@@ -1,114 +1,151 @@
-import changeHeaderIcon from './modules/changeHeaderIcon.js'
-import changeCarouselIcon from './modules/changeCarouselIcon.js'
-import setTop from './modules/setTop.js'
+import changeHeaderIcon from "./modules/changeHeaderIcon.js";
+import changeCarouselIcon from "./modules/changeCarouselIcon.js";
+import setTop from "./modules/setTop.js";
 
-import setBorder from './modules/setBorder.js'
+import setBorder from "./modules/setBorder.js";
 
-import carousel from './modules/carousel.js'
+import carousel from "./modules/carousel.js";
 
-import createNotification from './modules/notification.js'
-import createTip from './modules/tip.js'
+import createNotification from "./modules/notification.js";
+import createTip from "./modules/tip.js";
+
+import setHandler from "./modules/setHandler.js";
+import removeAll from "./modules/cart/removeAll.js";
+import clearOrder from "./modules/cart/clearOrder.js";
+import removeItem from "./modules/cart/removeItem.js";
 
 function init() {
-    function cssCorrection() {
-        try {
-            changeHeaderIcon({
-                element: document.querySelector('header'),
-                nodeName: 'IMG',
-                alt: 'Account',
-            })
-            changeCarouselIcon({
-                element: document.querySelector('.row-box__carousel'),
-                type: 'anim',
-                id: 'Next'
-            })
-        
-            setTop({
-                elements: document.querySelectorAll('.row-box__carousel button'),
-                carousel: document.querySelector('.row-box__carousel')
-            })
-            
-            setBorder({
-                parent: document.querySelector('.gallery__images-block'),
-                image: document.querySelector('.gallery__main-image img')
-            })
+  function cssCorrection() {
+    try {
+      changeHeaderIcon({
+        element: document.querySelector("header"),
+        nodeName: "IMG",
+        alt: "Account",
+      });
+      changeCarouselIcon({
+        element: document.querySelector(".row-box__carousel"),
+        type: "anim",
+        id: "Next",
+      });
 
-            carousel({
-                element: document.querySelector('.row-box__carousel'),
-                carousel: document.querySelector('.row-items'),
-                item: document.querySelector('.item-wrapper'),
-                buttons: document.querySelectorAll('button[data-type="anim"]'),
-                id: 'Next'
-            })
-        }   catch (err) {
-            console.log(err.message)
-            return null
-        }
+      setTop({
+        elements: document.querySelectorAll(".row-box__carousel button"),
+        carousel: document.querySelector(".row-box__carousel"),
+      });
+
+      setBorder({
+        parent: document.querySelector(".gallery__images-block"),
+        image: document.querySelector(".gallery__main-image img"),
+      });
+
+      carousel({
+        element: document.querySelector(".row-box__carousel"),
+        carousel: document.querySelector(".row-items"),
+        item: document.querySelector(".item-wrapper"),
+        buttons: document.querySelectorAll('button[data-type="anim"]'),
+        id: "Next",
+      });
+    } catch (err) {
+      console.log(err.message);
+      return null;
     }
-    cssCorrection()
+  }
+  cssCorrection();
 
-    function setTip() {
-        try {
-            let tip
-            let notification
-            let cart = document.querySelector('.cart')
-            let submit = document.querySelector('.submit')
+  function setTip() {
+    try {
+      let tip;
+      let notification;
+      let cart = document.querySelector(".cart");
+      let submit = document.querySelector(".submit");
 
-            submit.addEventListener('click', event => {
-                event.preventDefault()
+      submit.addEventListener("click", (event) => {
+        event.preventDefault();
 
-                if (tip) return
+        if (tip) return;
 
-                tip = createTip({
-                    classList: ['tip'],
-                    textContent: 'Added',
-                    cursorX: event.clientX,
-                    cursorY: event.clientY
-                })
+        tip = createTip({
+          classList: ["tip"],
+          textContent: "Added",
+          cursorX: event.clientX,
+          cursorY: event.clientY,
+        });
 
-                document.body.append(tip)
-                setNotification()
-                setTimeout(() => tip.style.opacity = 0, 200)
-                setTimeout(() => {tip.remove(); tip = null}, 550)
-            })
+        document.body.append(tip);
+        setNotification();
+        setTimeout(() => (tip.style.opacity = 0), 200);
+        setTimeout(() => {
+          tip.remove();
+          tip = null;
+        }, 550);
+      });
 
-            function setNotification() {
-                if (notification != undefined) return
+      function setNotification() {
+        if (notification != undefined) return;
 
-                notification = createNotification({
-                    classList: ['notification'],
-                    textContent: 1
-                })
+        notification = createNotification({
+          classList: ["notification"],
+          textContent: 1,
+        });
 
-                cart.append(notification)
-            }
-        }   catch (err) {
-            console.log(err.message)
-            return null
-        }
+        cart.append(notification);
+      }
+    } catch (err) {
+      console.log(err.message);
+      return null;
     }
-    // => here bug
-    // setTip()
+  }
+  // => here bug
+  // setTip()
 
-    // document.addEventListener('mouseout', event => {
-    //     let tip
+  setHandler({
+    element: document.querySelector(".delete-all"),
+    event: "click",
+    handler: function () {
+      removeAll({
+        list: document.querySelector(".cart-box__items"),
+        clear: clearOrder({
+          order: document.querySelector(".place-order"),
+          products: document.querySelector(".products"),
+          total: document.querySelector(".total .products-row"),
+        }),
+      });
+    },
+  });
 
-    //     if (!document.querySelector('.tip')) return
+  setHandler({
+    element: document.querySelector(".cart-box__items"),
+    event: "click",
+    handler: function (event) {
+      if (event.target.nodeName != "BUTTON") return;
 
-    //     tip = document.querySelector('.tip')
-    //     setTimeout(() => tip.style.opacity = 0, 800)
-    //     setTimeout(() => tip.remove(), 1300)
-    // })
+      console.log(event.target);
 
-    // document.addEventListener('mousemove', event => {
-    //     let tip
+      removeItem({
+        item: event.target.closest(".item-box"),
+      });
+    },
+  });
 
-    //     if (!document.querySelector('.tip')) return
+  // document.addEventListener('mouseout', event => {
+  //     let tip
 
-    //     tip = document.querySelector('.tip')
-    //     tip.style.left = event.clientX + 10 + 'px'
-    //     tip.style.top = event.clientY + 20 + 'px'      
-    // })
+  //     if (!document.querySelector('.tip')) return
+
+  //     tip = document.querySelector('.tip')
+  //     setTimeout(() => tip.style.opacity = 0, 800)
+  //     setTimeout(() => tip.remove(), 1300)
+  // })
+
+  // document.addEventListener('mousemove', event => {
+  //     let tip
+
+  //     if (!document.querySelector('.tip')) return
+
+  //     tip = document.querySelector('.tip')
+  //     tip.style.left = event.clientX + 10 + 'px'
+  //     tip.style.top = event.clientY + 20 + 'px'
+  // })
 }
 
-init()
+init();
