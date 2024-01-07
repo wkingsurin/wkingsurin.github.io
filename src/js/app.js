@@ -12,6 +12,7 @@ import createTip from "./modules/tip.js";
 import setHandler from "./modules/setHandler.js";
 import removeAll from "./modules/cart/removeAll.js";
 import clearOrder from "./modules/cart/clearOrder.js";
+import createItem from "./modules/cart/createItem.js";
 import removeItem from "./modules/cart/removeItem.js";
 
 function init() {
@@ -98,6 +99,19 @@ function init() {
   // => here bug
   // setTip()
 
+  // TEST =======
+  document.querySelector(".cart-box__items").append(
+    createItem({
+      name: "Nike Air Force 3",
+      imageSrc: "img/sneakers/3.jpg",
+      imageAlt: "Nike Air Force 3",
+      code: 75645,
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore voluptatem debitis, cumque obcaecati pariatur et ratione repellendus ducimus id repudiandae mollitia praesentium vel placeat quas quam vero possimus. Reiciendis, suscipit?",
+    })
+  );
+  // =============
+
   setHandler({
     element: document.querySelector(".delete-all"),
     event: "click",
@@ -117,7 +131,7 @@ function init() {
     element: document.querySelector(".cart-box__items"),
     event: "click",
     handler: function (event) {
-      if (event.target.nodeName != "BUTTON") return;
+      if (!event.target.classList.contains("delete-all")) return;
 
       console.log(event.target);
 
