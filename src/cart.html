@@ -69,8 +69,8 @@
                   <div class="content-column">
                     <div class="selection-box">
                       <div class="selection-box__item">
-                        <input type="checkbox" id="check" name="checkbox" />
-                        <label for="check">Select all</label>
+                        <input type="checkbox" id="checkbox" name="checkbox" />
+                        <label for="checkbox">Select all</label>
                       </div>
                       <button class="delete-all">Remove all</button>
                     </div>
@@ -119,11 +119,20 @@
                         </div>
                         <div class="item-box__column item-select">
                           <div class="selection-box__item">
-                            <input
-                              type="checkbox"
-                              id="check-1"
-                              name="checkbox"
-                            />
+                            <div class="input-block">
+                              <input
+                                type="checkbox"
+                                id="check-1"
+                                name="checkbox"
+                              />
+                              <div class="icon-block">
+                                <img
+                                  src="img/icons/check.png"
+                                  alt=""
+                                  class="icn"
+                                />
+                              </div>
+                            </div>
                             <label for="check-1">Select</label>
                           </div>
                           <button class="delete-all">Remove</button>
@@ -173,11 +182,20 @@
                         </div>
                         <div class="item-box__column item-select">
                           <div class="selection-box__item">
-                            <input
-                              type="checkbox"
-                              id="check-2"
-                              name="checkbox"
-                            />
+                            <div class="input-block">
+                              <input
+                                type="checkbox"
+                                id="check-2"
+                                name="checkbox"
+                              />
+                              <div class="icon-block">
+                                <img
+                                  src="img/icons/check.png"
+                                  alt=""
+                                  class="icn"
+                                />
+                              </div>
+                            </div>
                             <label for="check-2">Select</label>
                           </div>
                           <button class="delete-all">Remove</button>
@@ -190,9 +208,11 @@
                     <div class="place-order__content">
                       <div class="products">
                         <div class="products-row">
-                          <p class="row-item">Products(2)</p>
-                          <div class="row-item">
-                            <span class="value">512</span>
+                          <div class="row-item prod">
+                            Products(<span class="prod-value">3</span>)
+                          </div>
+                          <div class="row-item prod-all">
+                            <span class="value">768</span>
                             <span class="currency">$</span>
                           </div>
                         </div>
@@ -200,7 +220,7 @@
                           <p class="row-item">Discount 10%</p>
                           <div class="row-item row-item_discount">
                             <span class="minus">-</span>
-                            <span class="value">52</span>
+                            <span class="value">0</span>
                             <span class="currency">$</span>
                           </div>
                         </div>

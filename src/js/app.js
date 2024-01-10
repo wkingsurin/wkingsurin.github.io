@@ -15,6 +15,14 @@ import clearOrder from "./modules/cart/clearOrder.js";
 import createItem from "./modules/cart/createItem.js";
 import removeItem from "./modules/cart/removeItem.js";
 
+import selectItem from "./modules/cart/selectItem.js";
+
+import increaseItem from "./modules/cart/increaseItem.js";
+import setProdAmount from "./modules/cart/setProdAmount.js";
+import setDiscount from "./modules/cart/setDiscount.js";
+import setProdValue from "./modules/cart/setProdValue.js";
+import setTotal from "./modules/cart/setTotal.js";
+
 function init() {
   function cssCorrection() {
     try {
@@ -110,7 +118,39 @@ function init() {
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore voluptatem debitis, cumque obcaecati pariatur et ratione repellendus ducimus id repudiandae mollitia praesentium vel placeat quas quam vero possimus. Reiciendis, suscipit?",
     })
   );
+  document.querySelector(".cart-box__items").append(
+    createItem({
+      name: "Nike Air Force 3",
+      imageSrc: "img/sneakers/3.jpg",
+      imageAlt: "Nike Air Force 3",
+      code: 75645,
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore voluptatem debitis, cumque obcaecati pariatur et ratione repellendus ducimus id repudiandae mollitia praesentium vel placeat quas quam vero possimus. Reiciendis, suscipit?",
+    })
+  );
   // =============
+
+  setProdAmount({
+    parent: document.querySelector(".cart-box__items"),
+    prodAmount: document.querySelector(".prod-value"),
+  });
+  setProdValue({
+    prodAmount: document.querySelector(".prod-value"),
+    prodValue: document.querySelector(".prod-all .value"),
+  });
+  setDiscount({
+    prodValue: document.querySelector(".prod-all .value"),
+    discount: document.querySelector(".row-item_discount .value"),
+  });
+  setTotal({
+    total: document.querySelector(".total .value"),
+    prodValue: document.querySelector(".prod-all .value"),
+    discount: document.querySelector(".row-item_discount .value"),
+  });
+
+  selectItem({
+    item: document.querySelector(".item-box"),
+  });
 
   setHandler({
     element: document.querySelector(".delete-all"),
@@ -133,14 +173,26 @@ function init() {
     handler: function (event) {
       if (!event.target.classList.contains("delete-all")) return;
 
-      console.log(event.target);
-
       removeItem({
         item: event.target.closest(".item-box"),
+        prodAmount: document.querySelector(".prod-value"),
       });
     },
   });
 
+  setHandler({
+    element: document.querySelector(".cart-box__items"),
+    event: "click",
+    handler: function (event) {
+      increaseItem({
+        item: event.target.closest(".item-box"),
+        prodAmount: document.querySelector(".prod-value"),
+        prodValue: document.querySelector(".prod-all .value"),
+        discount: document.querySelector(".row-item_discount .value"),
+        total: document.querySelector(".total .value"),
+      });
+    },
+  });
   // document.addEventListener('mouseout', event => {
   //     let tip
 

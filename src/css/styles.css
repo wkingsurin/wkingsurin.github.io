@@ -1168,13 +1168,47 @@ a {
   outline: none;
   border-radius: 7px;
   background-color: white;
+  cursor: pointer;
 }
 .cart .selection-box__item label {
   padding-left: 10px;
   color: var(--main-g);
 }
-.cart .selection-box__item [name=checkbox]:hover {
-  border: 1px solid red;
+.cart [name=checkbox].active ~ .icon-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.cart .input-block {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+}
+.cart .icon-block {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.cart .icn {
+  width: 15px;
+  height: 15px;
 }
 .cart .delete-all {
   display: -webkit-box;
@@ -1187,6 +1221,10 @@ a {
       -ms-flex-pack: center;
           justify-content: center;
   color: var(--main-red);
+}
+.cart .cart-box__items {
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 .cart .cart-box__items > *:not(:last-child) {
   margin-bottom: 15px;
@@ -1404,6 +1442,14 @@ a {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 100%;
+}
+.cart .prod {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.cart .prod-value {
+  display: inline;
 }
 .cart .products {
   -webkit-box-flex: 1;
